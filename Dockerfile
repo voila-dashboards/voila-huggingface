@@ -14,7 +14,7 @@ COPY --chown=user . .
 
 RUN mamba env create --prefix $HOME/env  -f ./environment.yml
 
-EXPOSE 8866
+EXPOSE 7860
 WORKDIR $HOME/app
 
-CMD mamba run -p $HOME/env --no-capture-output voila --Voila.ip=0.0.0.0 --no-browser notebooks/
+CMD mamba run -p $HOME/env --no-capture-output voila --Voila.ip=0.0.0.0 --Voila.port=7860 --no-browser notebooks/

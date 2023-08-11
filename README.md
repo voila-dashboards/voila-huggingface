@@ -6,7 +6,6 @@ colorTo: green
 sdk: docker
 pinned: true
 license: mit
-app_port: 8866
 ---
 
 # voila-huggingface

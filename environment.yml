@@ -1,0 +1,11 @@
+name: base
+channels:
+  - conda-forge
+dependencies:
+  - ipywidgets
+  - ipykernel
+  - pandas
+  - pip
+
+  - pip:
+    - voila==0.5.0rc0

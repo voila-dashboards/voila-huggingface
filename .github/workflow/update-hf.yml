@@ -1,0 +1,17 @@
+name: Update Hugging Face repository
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  push-to-hf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Push to Hugging Face
+        env:
+          HF_USER: ${{ secrets.HF_USER }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: git push https://$HF_USER:$HF_TOKEN@huggingface.co/spaces/voila-dashboards/voila-huggingface main

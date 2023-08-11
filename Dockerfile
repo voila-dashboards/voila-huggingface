@@ -1,12 +1,20 @@
 FROM condaforge/mambaforge:latest
 
-WORKDIR  /opt/voila
-COPY . .
+# The HF Space container runs with user ID 1000.
+RUN useradd -m -u 1000 user
+USER user
 
-RUN mamba install python=3.10 -y
-RUN mamba env update -f ./environment.yml
+# Set home to the user's home directory
+ENV HOME=/home/user \
+  PATH=/home/user/.local/bin:$PATH
+
+# Set the working directory to the user's home directory
+WORKDIR $HOME/app
+COPY --chown=user . .
+
+RUN mamba env create --prefix $HOME/env  -f ./environment.yml
 
 EXPOSE 8866
-WORKDIR  /opt/voila
+WORKDIR $HOME/app
 
-CMD ["voila", "--Voila.ip=0.0.0.0", "--no-browser", "notebooks/"]
+CMD mamba run -p $HOME/env --no-capture-output voila --Voila.ip=0.0.0.0 --no-browser notebooks/

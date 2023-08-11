@@ -1,7 +1,8 @@
-name: base
+name: voila
 channels:
   - conda-forge
 dependencies:
+  - python=3.10
   - ipywidgets
   - ipykernel
   - pandas

@@ -19,7 +19,7 @@ This repository contains an example of deploying Voila dashboards from GitHub to
 
 ## Links.
 
-- Hugging Face Project: <https://huggingface.co/spaces/voila-dashboards/voila-huggingface/tree/main>
+- Hugging Face Project: <https://huggingface.co/spaces/voila-dashboards/voila-huggingface>
 - Web App: <https://voila-dashboards-voila-huggingface.hf.space/>
 - Spaces Documentation: <https://huggingface.co/docs/hub/spaces>
 

@@ -17,4 +17,5 @@ dependencies:
   - ipyvolume
 
   - pip:
-    - voila==0.5.0rc0
+    - voila==0.5.0
+    - voila-topbar==0.1.1
